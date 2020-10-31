@@ -55,8 +55,6 @@ if __name__=='__main__':
     for w in tf:
         if args.debug:
             print(w,tf[w],df[w],sep='\t')
-        if df[w] == 0: #修正
-        	df[w]=0.00001 #修正
         tfidf[w]=(tf[w]/number_of_word)*(log2(df['##NOD##']/df[w])+1)
 
     srted=sorted(tfidf.keys(),key=lambda x:tfidf[x],reverse=True)
